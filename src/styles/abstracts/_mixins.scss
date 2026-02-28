@@ -1,0 +1,137 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+@use "variables" as va;
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp) {
+  @if $bp == va.$tablet {
+    @media (min-width: va.$bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == va.$tablethorizontal {
+    @media (min-width: va.$bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == va.$desktop {
+    @media (min-width: va.$bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == va.$desktop-xl {
+    @media (min-width: va.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button {
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: va.$black;
+  color: va.$white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 30px;
+  position: relative;
+  letter-spacing: 3.64px;
+}
+
+@mixin button-location {
+  @include button();
+  &::after {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 100%;
+    background-color: va.$brown;
+    position: absolute;
+    right: -56px;
+    top: 0;
+    font-size: 28px;
+    font-weight: 300;
+    background-image: url("../../../images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    background-color: va.$brown;
+    &::after {
+      background-color: va.$black;
+    }
+  }
+}
+
+@mixin button-backtohome {
+  @include button();
+  &::after {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 100%;
+    background-color: va.$brown;
+    position: absolute;
+    left: -56px;
+    top: 0;
+    font-size: 28px;
+    font-weight: 300;
+    background-image: url("../../../images/arrow-2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    background-color: va.$brown;
+    &::after {
+      background-color: va.$black;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+@use "../abstracts" as ab;
+
+footer.footer-primary {
+  background-color: ab.$black;
+  padding: 40px 30px;
+
+  .container {
+    @include ab.breakpoint(ab.$tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  a {
+    img {
+      margin-bottom: 30px;
+    }
+  }
+  ul {
+    @include ab.reset-list();
+    display: flex;
+    gap: 20px;
+  }
+
+  address {
+    font-family: ab.$secundary-font;
+    color: ab.$white;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom: 30px;
+    @include ab.breakpoint(ab.$tablet) {
+      width: 35%;
+    }
+  }
+}

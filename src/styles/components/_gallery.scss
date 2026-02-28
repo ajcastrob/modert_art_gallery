@@ -1,0 +1,129 @@
+@use "../abstracts" as ab;
+
+.gallery {
+  .container {
+    margin-left: 16px;
+    margin-right: 16px;
+    @include ab.breakpoint(ab.$tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &__item {
+    &-title {
+      margin: 0;
+      padding: 0;
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 45px;
+      text-transform: uppercase;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 21px;
+      @include ab.breakpoint(ab.$tablet) {
+        width: 57%;
+      }
+      @include ab.breakpoint(ab.$tablethorizontal) {
+        width: 72%;
+        font-size: 81px;
+        line-height: 71px;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      padding: 0;
+      font-family: ab.$secundary-font;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 200;
+      width: 85%;
+      margin-bottom: 32px;
+      @include ab.breakpoint(ab.$tablet) {
+        width: 71%;
+        text-align: left;
+      }
+    }
+
+    &-img {
+      img {
+        width: 100%;
+        margin-bottom: 25px;
+        @include ab.breakpoint(ab.$tablet) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .context {
+    background-color: ab.$black;
+    padding: 48px 24px;
+    margin-bottom: 100px;
+
+    @include ab.breakpoint(ab.$tablet) {
+      padding: 131px 24px;
+    }
+
+    @include ab.breakpoint(ab.$tablethorizontal) {
+      padding: 182px 24px;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      color: ab.$white;
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 45px;
+      margin-bottom: 24px;
+      @include ab.breakpoint(ab.$tablethorizontal) {
+        font-size: 61px;
+        line-height: 56px;
+      }
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      color: ab.$white;
+      font-family: ab.$secundary-font;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 200;
+      @include ab.breakpoint(ab.$tablethorizontal) {
+        width: 68%;
+      }
+    }
+  }
+}
+
+.gallery__item--presentation {
+  @include ab.breakpoint(ab.$tablet) {
+    grid-area: 1 / 1 / span 1 / span 2;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  span {
+    flex-basis: 60%;
+  }
+  .simple-description {
+    flex-basis: 40%;
+  }
+}
+
+.gallery__item--collection {
+  @include ab.breakpoint(ab.$tablet) {
+    grid-area: 2 / 1 / span 1 / span 2;
+    display: flex;
+    gap: 10px;
+  }
+
+  span {
+    flex-basis: 60%;
+  }
+
+  .comment-collection {
+    flex-basis: 40%;
+  }
+}

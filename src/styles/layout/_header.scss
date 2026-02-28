@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+@use "../abstracts" as ab;
+
+header.header-principal {
+  margin-bottom: 40px;
+  img {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .logo-mobile {
+    width: 80%;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 15px;
+    @include ab.breakpoint(ab.$tablet) {
+      margin-top: 130px;
+      margin-left: -47px;
+    }
+  }
+
+  p {
+    font-family: ab.$secundary-font;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+    color: ab.$grey;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 32px;
+    text-align: left;
+    width: 85%;
+    @include ab.breakpoint(ab.$tablet) {
+      margin-left: -47px;
+    }
+  }
+
+  ul {
+    @include ab.reset-list();
+  }
+
+  .container {
+    @include ab.breakpoint(ab.$tablet) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    img.image-mobile-header {
+      @include ab.breakpoint(ab.$tablet) {
+        display: none;
+      }
+    }
+
+    img.image-tablet-header {
+      display: none;
+      @include ab.breakpoint(ab.$tablet) {
+        display: block;
+      }
+    }
+  }
+}

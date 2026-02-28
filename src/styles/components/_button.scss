@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+@use "../abstracts" as ab;
+
+.botton-location {
+  @include ab.button-location();
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 100px;
+  @include ab.breakpoint(ab.$tablet) {
+    right: 64px;
+  }
+}

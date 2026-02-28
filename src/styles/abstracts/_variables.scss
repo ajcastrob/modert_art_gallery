@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+
+/// Copy text color
+$brown: #d5966c;
+$black: #151515;
+$grey: #444444;
+$white: #ffffff;
+
+/// Breakpoints map
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;
+
+$tablet: $bp-tablet;
+$tablethorizontal: $bp-tablet-horizontal;
+$desktop: $bp-desktop;
+$desktop-xl: $bp-desktop-xl;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: "/assets/" !default;
+
+$secundary-font: "Outfit", sans-serif;
