@@ -1,0 +1,141 @@
+@use "../abstracts" as ab;
+
+main.main-location {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: ab.$black;
+    @include ab.breakpoint(ab.$tablet) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    @include ab.breakpoint(ab.$desktop) {
+      padding-left: 100px;
+      padding-right: 10px;
+    }
+    @include ab.breakpoint(ab.$desktop-xl) {
+      padding-left: 200px;
+      padding-right: 10px;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      padding-left: 400px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.location {
+  &__item {
+    &-title {
+      margin: 0;
+      padding: 0;
+      color: ab.$white;
+      padding-top: 48px;
+      padding-bottom: 30px;
+      font-size: 50px;
+      line-height: 45px;
+      font-weight: 900;
+      text-transform: uppercase;
+      @include ab.breakpoint(ab.$tablet) {
+        padding-top: 88px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 70px;
+        line-height: 70px;
+      }
+    }
+    &-subtitle {
+      margin: 0;
+      padding: 0;
+      color: ab.$brown;
+      padding-bottom: 20px;
+      font-size: 32px;
+      line-height: 32px;
+      text-transform: uppercase;
+      @include ab.breakpoint(ab.$tablet) {
+        padding-top: 88px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 36px;
+      }
+    }
+    &-p1 {
+      margin: 0;
+      padding: 0;
+      font-weight: 200;
+      color: white;
+      font-family: ab.$secundary-font;
+      font-size: 16px;
+      padding-bottom: 10px;
+      @include ab.breakpoint(ab.$tablet) {
+        font-size: 18px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+      }
+    }
+    &-p2 {
+      margin: 0;
+      padding: 0;
+      font-weight: 200;
+      color: white;
+      font-family: ab.$secundary-font;
+      font-size: 16px;
+      padding-bottom: 10px;
+      @include ab.breakpoint(ab.$tablet) {
+        font-size: 18px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+      }
+    }
+    &-p3 {
+      margin: 0;
+      padding: 0;
+      font-weight: 200;
+      color: white;
+      font-family: ab.$secundary-font;
+      font-size: 16px;
+      padding-bottom: 20px;
+      @include ab.breakpoint(ab.$tablet) {
+        font-size: 18px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+      }
+    }
+    &-p4 {
+      margin: 0;
+      padding: 0;
+      font-weight: 200;
+      color: white;
+      line-height: 28px;
+      font-family: ab.$secundary-font;
+      font-size: 16px;
+      padding-bottom: 56px;
+      @include ab.breakpoint(ab.$tablet) {
+        width: 85%;
+        font-size: 18px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        padding-bottom: 100px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+article.location__item {
+  @include ab.breakpoint(ab.$tablet) {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+  @include ab.breakpoint(ab.$desktop) {
+    gap: 335px;
+  }
+}

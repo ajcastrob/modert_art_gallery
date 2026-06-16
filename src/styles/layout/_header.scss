@@ -5,6 +5,28 @@
 
 header.header-principal {
   margin-bottom: 40px;
+
+  @include ab.breakpoint(ab.$desktop-primary) {
+    margin-bottom: 150px;
+  }
+
+  .container {
+    @include ab.breakpoint(ab.$desktop) {
+      background-image: url("../../../images/logo-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: top 172px left 133px;
+      background-size: 450px;
+    }
+    @include ab.breakpoint(ab.$desktop-xl) {
+      background-position: top 214px left 179px;
+      background-size: 500px;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      background-position: top 310px left 277px;
+      background-size: 600px;
+    }
+  }
+
   img {
     width: 100%;
     margin-bottom: 25px;
@@ -18,6 +40,11 @@ header.header-principal {
     @include ab.breakpoint(ab.$tablet) {
       margin-top: 130px;
       margin-left: -47px;
+    }
+    @include ab.breakpoint(ab.$desktop) {
+      display: none;
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -36,6 +63,20 @@ header.header-principal {
     @include ab.breakpoint(ab.$tablet) {
       margin-left: -47px;
     }
+    @include ab.breakpoint(ab.$desktop) {
+      margin-top: 179px;
+      margin-left: -37px;
+    }
+    @include ab.breakpoint(ab.$desktop) {
+      margin-top: 181px;
+      width: 68%;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      margin-top: 327px;
+      font-size: 22px;
+      line-height: 32px;
+      width: 55%;
+    }
   }
 
   ul {
@@ -46,6 +87,10 @@ header.header-principal {
     @include ab.breakpoint(ab.$tablet) {
       display: grid;
       grid-template-columns: 50% 50%;
+    }
+
+    @include ab.breakpoint(ab.$desktop) {
+      grid-template-columns: 70% 30%;
     }
 
     img.image-mobile-header {
@@ -59,6 +104,56 @@ header.header-principal {
       @include ab.breakpoint(ab.$tablet) {
         display: block;
       }
+      @include ab.breakpoint(ab.$desktop) {
+        display: none;
+      }
     }
+
+    img.image-hero-desktop {
+      display: none;
+      @include ab.breakpoint(ab.$desktop) {
+        display: inline-block;
+        position: relative;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+header.header-location {
+  margin-bottom: -2.6px;
+  img {
+    width: 100%;
+  }
+}
+nav.nav-location {
+  ul {
+    @include ab.reset-list();
+  }
+  li {
+    position: relative;
+  }
+}
+
+img.location {
+  @include ab.breakpoint(ab.$tablet) {
+    display: none;
+  }
+}
+
+img.location-tablet {
+  display: none;
+  @include ab.breakpoint(ab.$tablet) {
+    display: block;
+  }
+  @include ab.breakpoint(ab.$desktop) {
+    display: none;
+  }
+}
+
+img.location-desktop {
+  display: none;
+  @include ab.breakpoint(ab.$desktop) {
+    display: block;
   }
 }

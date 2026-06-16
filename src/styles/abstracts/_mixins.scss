@@ -59,6 +59,12 @@
       @content;
     }
   }
+
+  @if $bp == va.$desktop-primary {
+    @media (min-width: va.$bp-desktop-primary) {
+      @content;
+    }
+  }
 }
 
 @mixin reset-list() {
@@ -134,4 +140,10 @@
       background-color: va.$black;
     }
   }
+}
+
+@mixin fade-in {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 35%;
 }

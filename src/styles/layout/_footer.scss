@@ -7,10 +7,21 @@ footer.footer-primary {
   background-color: ab.$black;
   padding: 40px 30px;
 
+  &-page2 {
+    background-color: ab.$brown;
+  }
+
+  @include ab.breakpoint(ab.$desktop-primary) {
+    margin-top: 100px;
+  }
+
   .container {
     @include ab.breakpoint(ab.$tablet) {
       display: flex;
       justify-content: space-between;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      padding: 18px 60px;
     }
   }
 
@@ -34,6 +45,28 @@ footer.footer-primary {
     margin-bottom: 30px;
     @include ab.breakpoint(ab.$tablet) {
       width: 35%;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      width: 25%;
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+}
+
+footer.footer-primary address.address-info {
+  color: ab.$black;
+}
+
+footer.footer-primary {
+  margin-top: 0;
+  .container {
+    @include ab.breakpoint(ab.$desktop) {
+      justify-content: center;
+      gap: 180px;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      justify-content: center;
     }
   }
 }

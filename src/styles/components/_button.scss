@@ -8,7 +8,38 @@
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 100px;
+  transition: 0.6s ease;
   @include ab.breakpoint(ab.$tablet) {
     right: 64px;
+  }
+  @include ab.breakpoint(ab.$desktop) {
+    margin-top: 32px;
+    margin-left: 28px;
+  }
+}
+
+.button-backtohome {
+  @include ab.button-backtohome();
+  position: fixed;
+  top: 0px;
+  left: 56px;
+  transition: 0.6s ease;
+
+  @include ab.breakpoint(ab.$tablet) {
+    top: 0px;
+    left: 120px;
+    padding: 24px 35px;
+  }
+  @include ab.breakpoint(ab.$desktop) {
+    top: 0px;
+    left: 140px;
+  }
+  @include ab.breakpoint(ab.$desktop-xl) {
+    top: 0;
+    left: 225px;
+  }
+  @include ab.breakpoint(ab.$desktop-primary) {
+    top: 0;
+    left: 355px;
   }
 }

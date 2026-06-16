@@ -8,6 +8,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+    @include ab.breakpoint(ab.$desktop) {
+      margin-left: 160px;
+      margin-right: 160px;
+    }
+    @include ab.breakpoint(ab.$desktop-primary) {
+      margin-left: 250px;
+      margin-right: 250px;
+    }
   }
   &__item {
     &-title {
@@ -21,6 +29,13 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 21px;
+      @include ab.fade-in();
+
+      @include ab.breakpoint(ab.$desktop-primary) {
+        display: block;
+        padding: 20px 26px;
+      }
+
       @include ab.breakpoint(ab.$tablet) {
         width: 57%;
       }
@@ -28,6 +43,17 @@
         width: 72%;
         font-size: 81px;
         line-height: 71px;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        width: 73%;
+        font-size: 60px;
+        line-height: 86px;
+      }
+      span {
+        width: 60%;
+        @include ab.breakpoint(ab.$desktop) {
+          width: 150%;
+        }
       }
     }
 
@@ -40,9 +66,19 @@
       font-weight: 200;
       width: 85%;
       margin-bottom: 32px;
+      @include ab.fade-in();
+
       @include ab.breakpoint(ab.$tablet) {
         width: 71%;
         text-align: left;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+        line-height: 32px;
+      }
+      @include ab.breakpoint(ab.$desktop-primary) {
+        padding-left: 23px;
+        padding-right: 5px;
       }
     }
 
@@ -50,6 +86,8 @@
       img {
         width: 100%;
         margin-bottom: 25px;
+        @include ab.fade-in();
+
         @include ab.breakpoint(ab.$tablet) {
           margin-bottom: 10px;
         }
@@ -61,6 +99,7 @@
     background-color: ab.$black;
     padding: 48px 24px;
     margin-bottom: 100px;
+    @include ab.fade-in();
 
     @include ab.breakpoint(ab.$tablet) {
       padding: 131px 24px;
@@ -68,6 +107,14 @@
 
     @include ab.breakpoint(ab.$tablethorizontal) {
       padding: 182px 24px;
+    }
+
+    @include ab.breakpoint(ab.$desktop) {
+      padding: 83px 24px;
+    }
+
+    @include ab.breakpoint(ab.$desktop-xl) {
+      padding: 205px 24px;
     }
 
     h2 {
@@ -82,6 +129,10 @@
         font-size: 61px;
         line-height: 56px;
       }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 60px;
+        line-height: 60px;
+      }
     }
     p {
       margin: 0;
@@ -93,6 +144,11 @@
       font-weight: 200;
       @include ab.breakpoint(ab.$tablethorizontal) {
         width: 68%;
+      }
+      @include ab.breakpoint(ab.$desktop) {
+        font-size: 22px;
+        line-height: 32px;
+        width: 85%;
       }
     }
   }
@@ -110,6 +166,9 @@
   .simple-description {
     flex-basis: 40%;
   }
+  @include ab.breakpoint(ab.$desktop-primary) {
+    gap: 50px;
+  }
 }
 
 .gallery__item--collection {
@@ -119,11 +178,48 @@
     gap: 10px;
   }
 
+  @include ab.breakpoint(ab.$desktop-primary) {
+    gap: 30px;
+  }
+
   span {
     flex-basis: 60%;
   }
 
   .comment-collection {
     flex-basis: 40%;
+  }
+
+  @include ab.breakpoint(ab.$desktop) {
+    span {
+      flex-basis: 53%;
+    }
+
+    .comment-collection {
+      flex-basis: 46%;
+    }
+  }
+  @include ab.breakpoint(ab.$desktop-xl) {
+    span {
+      flex-basis: 50%;
+    }
+
+    .comment-collection {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 150px;
+    scale: 0.9;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
   }
 }
